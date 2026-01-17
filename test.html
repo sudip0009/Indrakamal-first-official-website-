@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <STYle>
+      body{
+        display: flex;
+        gap: 5px;
+        
+      }
+
+      .container{
+        display: flex;
+        gap: 5px;
+      }
+      
+      .container img{
+        height: 200px;
+        width: 200px;
+      }
+
+      .big-image img{
+        height: 400px;
+        width: 400px;
+      }
+  </STYle>
+</head>
+<body>
+  <div class="container">
+    <div id="first_container" class="image_container">
+      <img src="value.webp" alt="">
+    </div>
+    <div class="image_container">
+      <img src="vision.webp" alt="">
+    </div>
+    <div class="image_container">
+      <img src="mission.webp" alt="">
+    </div>
+    <div id="last_container" class="image_container">
+      <img src="cooperative.webp" alt="">
+    </div>
+   
+  </div>
+
+   <div class="big-image">
+    <img src="board.webp" alt="">
+   </div>
+  
+
+   
+   <script>
+    const images = [
+      'value.webp',
+      'vision.webp',
+      'mission.webp',
+      'cooperative.webp',
+      'board.webp',
+      'ceo.webp',
+      'imags.webp',
+      'leadership.webp'
+    ];
+
+    let imgContainers = document.querySelectorAll('.image_container');
+    let bigImage = document.querySelector('.big-image img');
+    let imageIndex = 0; // Track which image from array to show next
+
+    // Function to update all thumbnails
+    function updateThumbnails() {
+        // Fill first container with next image from array
+        imgContainers[0].querySelector('img').src = images[imageIndex];
+        imageIndex = (imageIndex + 1) % images.length; // Move to next image
+        
+        // Slide other containers' images to the right
+        for(let i = imgContainers.length - 1; i > 0; i--) {
+            const currentImg = imgContainers[i].querySelector('img');
+            const prevImg = imgContainers[i-1].querySelector('img');
+            currentImg.src = prevImg.src;
+        }
+        
+        // Update big image with what's in first container
+        bigImage.src = imgContainers[0].querySelector('img').src;
+    }
+
+    // Add click events to containers
+    imgContainers.forEach((container, index) => {
+        container.addEventListener('click', () => {
+            // Show clicked image in big image
+            bigImage.src = container.querySelector('img').src;
+        });
+    });
+
+    // Initialize with first images
+    function initializeImages() {
+        // Start with first 4 images
+        for(let i = 0; i < imgContainers.length; i++) {
+            imgContainers[i].querySelector('img').src = images[i % images.length];
+        }
+        imageIndex = imgContainers.length; // Set next image index
+        
+        // Set big image to first container's image
+        bigImage.src = imgContainers[0].querySelector('img').src;
+    }
+
+    // Initialize on load
+    initializeImages();
+
+    // Auto slide every 2 seconds
+    setInterval(updateThumbnails, 2000);
+</script>
+   
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Indrakamal Multipurpose cooperative</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="/title_logo.webp">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --medium-green: #2d6a4f;
+            --light-green: #40916c;
+            --dark-blue: #012a4a;
+            --medium-blue: #013a63;
+            --light-blue: #01497c;
+            --off-white: #f8f9fa;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--off-white);
+            color: #333;
+            line-height: 1.6;
+            
+        }
+        
+       
+        
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(1, 42, 74, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            
+            
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--dark-green), var(--dark-blue));
+            border-radius: 2px;
+        }
+        
+        .committee-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: white;
+           
+        }
+        .committee-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .committee-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+           
+        }
+        
+        
+        
+        .card-header {
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .loan .card-header {
+            background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+        }
+        
+        .advisory .card-header {
+            background: linear-gradient(135deg, var(--medium-blue), var(--light-blue));
+        }
+        
+        .executive .card-header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--medium-blue));
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .card-body1{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 20px;
+        }
+        
+        .member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            width: 100%;
+           
+        }
+        
+        
+        
+        .member-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 3px solid var(--light-gray);
+        }
+        
+        .member-info h3 {
+            color: var(--dark-blue);
+            margin-bottom: 0.2rem;
+        }
+        
+        .member-info p {
+            color: var(--medium-blue);
+            font-size: 0.9rem;
+        }
+        .committee-info{
+            margin-left: 20px;
+        }
+        
+      
+        
+        @media (max-width: 768px) {
+             .hero{
+                height: 160px;
+                padding-top: 20px;
+             }
+             
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .committee-grid {
+                grid-template-columns: 1fr;
+                gap: 1px;
+            }
+            .committee-section{
+                padding: 0px;
+                padding-bottom: 10px;
+            }
+
+            .container{
+                padding: 20px 10px;
+            }
+            .card-body {
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+
+         .card-body1{
+            display: flex;
+             flex-direction: column;
+            justify-content: center;
+        }
+        .member-img{
+            height: 120px;
+            width: 120px;
+        }
+        .member-info{
+            font-size: 1.3rem;
+            
+        }
+        .member-info p{
+            font-size: 1rem;
+        }
+        .committee-info h3{
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+        }
+
+
+
+
+
+
+
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: var(--light-green);
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--primary-red);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-content {
+            padding: 20px;
+        }
+        
+        .team-member h3 {
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: var(--light-green);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--primary-green);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-item i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .value-item h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+        
+        .value-item p {
+            color: var(--text-light);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+        
+       
+        
+        /* Members Gallery Section */
+        .members-gallery3 {
+            padding: 60px 90px;
+            text-align: center;
+            
+        }
+
+        .gallery-title3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--dark-green);
+        }
+
+        .gallery-grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .member-card3 {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .member-card3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+            transition: transform 0.5s ease;
+        }
+
+       
+
+        .member-card3:hover img {
+            transform: scale(1.05);
+        }
+
+        .member-info3 {
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            padding-bottom: 50px;
+            padding: 14px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            height: 100px;
+            
+        }
+
+       
+
+        .member-info3 h4 {
+            margin: 0;
+            
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .member-info3 p {
+            margin: px 0 0;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 0px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .gallery-grid3 {<p><span style="font-weight: bold;">Indrakamal Multipurpose Co-operative Limited</span> is a legally recognized cooperative institution, authorized by the Provincial Government under the Cooperative Act, 2076 (2019 A.D.), to operate financial transactions. The organization's head office is located in Tripureshwor, Kathmandu-1. Its management committee comprises highly experienced professionals and managers with extensive expertise in the financial sector.
+
+<br>The primary objective of the cooperative is to foster a culture of saving among its members, mobilize these savings into accessible and affordable loans, and channel them towards productive sectors, services, businesses, and other economic activities. In doing so, the cooperative seeks to uplift the social and economic well-being of its members.
+
+<br>Guided by a strong service-oriented philosophy, the institution prioritizes the welfare of its members over profit. It strictly adheres to the National Cooperative Act and cooperative principles, ensuring that its members receive high-quality, modern, and reliable financial services.
+
+<br>Furthermore, the cooperative is committed to enhancing financial accessibility, strengthening the national economy, improving the standard of living of its members, boosting production, creating employment opportunities, contributing to national development, and generating a multiplier effect of savings. With these commitments, Indrakamal Multipurpose Co-operative Limited aims to remain a leading institution among its peers.     
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .about-text, .about-image {
+                flex: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+            }
+            
+            .members-gallery3 {
+                padding: 60px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid3 {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+      
+    
+      <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.webp">
+        </div>
+
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+   
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+             <li class="menu-item">
+                <a href="gallery.html">Gallery</a>
+            </li>
+           
+              <li class="menu-item active">
+                <a href="commettee.html">Board Members</a>
+            </li>
+              <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Dedicated Committees</h1>
+            <p>Meet the passionate individuals working to make our cooperative a success</p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+       <!-- Members Gallery Section -->
+    <section class="members-gallery3">
+        <h2 class="gallery-title3">Board Members</h2>
+        <div class="gallery-grid3">
+            <!-- Member 1 -->
+            <div class="member-card3">
+                <img src="sanjay.webp" alt="Member 1">
+                <div class="member-info3">
+                    <h4>Sanjay Adhikari</h4>
+                    <p>Chairman</p>
+                </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="member-card3">
+                <img src="mohan.webp" alt="Member 2">
+                <div class="member-info3">
+                    <h4 style="font-size: 1.5rem; margin-top: 10px;">Mohan Ghimire</h4>
+                    <p>Vice Chairman</p>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="member-card3">
+                <img src="keshav.webp" alt="Member 3">
+                <div class="member-info3">
+                    <h4 style="font-size: 1.5rem; margin-top: 10px;">Keshav Raj Paudel</h4>
+                    <p>Secretary</p>
+                </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="member-card3">
+                <img src="nirmala.webp" alt="Member 4">
+                <div class="member-info3">
+                    <h4 >Nirmala Chapain</h4>
+                    <p>Treasurer</p>
+                </div>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="member-card3">
+                <img src="Sunil Raj Dahal.webp" alt="Member 5">
+                <div class="member-info3" >
+                    <h4 >Sunil Raj Dahal</h4>
+                    <p>Member</p>
+                </div>
+            </div>
+              
+
+            <!-- Member 6 -->
+            <div class="member-card3">
+                <img src="sangham.webp" alt="Member 6">
+                <div class="member-info3" >
+                    <h4 >Sangham Shrestha</h4>
+                    <p>Coordinator</p>
+                </div>
+            </div>
+
+            <!-- Member 7 -->
+            <div class="member-card3">
+                <img src="nabin.webp" alt="Member 6">
+                <div class="member-info3" >
+                    <h4 >Nabin KC</h4>
+                    <p>Member</p>
+                </div>
+            </div>
+
+            <!-- Member 8 -->
+            <div class="member-card3">
+                <img src="Yegya raj pandey.webp" alt="Member 6">
+                <div class="member-info3" >
+                    <h4 >Yegya Raj Pandey</h4>
+                    <p>Member</p>
+                </div>
+            </div>
+
+            <!-- Member 9 -->
+            <div class="member-card3">
+                <img src="rajendra maharjan.webp" alt="Member 6">
+                <div class="member-info3" >
+                    <h4 >Rajendra Maharjan</h4>
+                    <p>Member</p>
+                </div>
+            </div>
+
+
+                 
+            
+          
+
+
+                 
+            
+            
+        </div>
+    </section>
+
+    <div class="container">
+ 
+
+
+         <section class="committee-section">
+            <div class="committee-grid">
+                <div class="committee-card executive">
+                    <div class="card-header">
+                        <h3>Executive Committee (कार्य समिति)</h3>
+                    </div>
+                    <div class="card-body1">
+                        <div class="member m1" >
+                            <img src="sanjay.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>sanjay Adhikari</h3>
+                                <p>Chair Man</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="mohan2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Mohan Ghimire</h3>
+                                <p>Vice Chairman</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="keshav2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Keshab Raj Paudel</h3>
+                                <p>Secratery</p>
+                            </div>
+                        </div>
+                         <div class="member">
+                            <img src="nirmala2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Nirmala Chaipain</h3>
+                                <p>Treasurer</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="Sunil Raj Dahal2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Sunil Raj Dahal</h3>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="nabin2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Nabin KC</h3>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="M6.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Sabin Thapa</h3>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="committee-info">
+                    <h3>About the Executive Committee</h3>
+                    <p>The Executive Committee is responsible for the overall management and governance of our cooperative. They make key decisions, set policies, and ensure that the organization operates in the best interests of its members.</p>
+                    <p>This committee meets monthly to review financial performance, operational issues, and strategic initiatives. They work closely with other committees to ensure the cooperative's mission is fulfilled.</p>
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+    
+
+
+
+        <section class="committee-section">
+    
+            <div class="committee-grid">
+                <div class="committee-card advisory">
+                    <div class="card-header">
+                        <h3>Accounting Committee (लेखा समिति)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="member">
+                            <img src="sangham2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Sangam Shrestha</h3>
+                                <p>Coordinator</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="Yegya raj pandey2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Yegya Raj Pandey</h3>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="rajendra maharjan2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Rajendra Maharjan</h3>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="committee-info">
+                    <h3>About the Accounting Committee</h3>
+                    <p>There are also 3 members who have experience in providing essential, concrete advice and contributions required for the operation of this organization.</p>
+                    <p>They meet quarterly to review the cooperative’s financial status, monitor income and expenditures, verify accounting records, and assess the effectiveness of financial controls. They provide their findings and recommendations to the Account Committee to support transparency, accuracy, and responsible financial management.</p>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <section class="committee-section">
+           
+            <div class="committee-grid">
+                <div class="committee-card loan">
+                    <div class="card-header">
+                        <h3>Loan Committee (ऋण समिति)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="member">
+                            <img src="keshav2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Keshav Raj Paudel</h3>
+                                <p>Secratery</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="M2.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Ramesh Shrestha</h3>
+                                <p>Senior Loan Officer</p>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="M3.webp" alt="Committee Member" class="member-img">
+                            <div class="member-info">
+                                <h3>Dipesh Gurung</h3>
+                                <p>Credit Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="committee-info">
+                    <h3>About the Loan Committee</h3>
+                    <p>The Loan Committee is responsible for reviewing and approving loan applications from our members. They ensure that all loans meet our cooperative's lending criteria and that members receive fair and transparent financing options.</p>
+                    <p>The committee meets every Tuesday and Thursday to review applications and make decisions. They follow strict guidelines to maintain the financial health of our cooperative while supporting members' financial needs.</p>
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+        
+
+        
+
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="function.js"></script>
+   
+</body>
+</html>

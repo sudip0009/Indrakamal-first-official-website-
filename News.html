@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Indrakamal Multipurpose cooperative</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="/title_logo.webp">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8faf8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Article Content - Initially Hidden */
+        .article-container {
+            display: none;
+            padding: 40px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-back-btn {
+            display: inline-block;
+            background: #2e8b57;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: background 0.3s ease;
+        }
+        
+        .article-back-btn:hover {
+            background: #267349;
+        }
+        
+        .article-back-btn i {
+            margin-right: 8px;
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+        }
+        
+        .article-header h1 {
+            color: #2e8b57;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            color: #2e8b57;
+            margin: 30px 0 15px;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2e8b57;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #2e8b57;
+        }
+        
+        /* Publications Section */
+        .publications {
+            padding: 40px 0;
+        }
+        
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .publication-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .publication-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .publication-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .publication-card:hover .publication-image img {
+            transform: scale(1.05);
+        }
+        
+        .publication-content {
+            padding: 20px;
+        }
+        
+        .publication-date {
+            color: #2e8b57;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .publication-content h3 {
+            color: #2e8b57;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .publication-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #2e8b57;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Annual Reports Section */
+        .annual-reports {
+            padding: 40px 0;
+            background: #e8f5e9;
+            margin: 40px 0;
+        }
+        
+        .report-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .report-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 25px 20px;
+        }
+        
+        .report-card i {
+            font-size: 3rem;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+        
+        .report-card h3 {
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        
+        .report-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #2e8b57;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        /* Main content class to toggle visibility */
+        .main-content {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Hide class */
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                height: 190px;
+            }
+            
+            .article-image {
+                height: 250px;
+            }
+            
+            .article-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+       
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+        <div class="slogan-container">
+            <img src="/slogen.webp">
+        </div>
+        
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation Bar -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item active">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="gallery.html">Gallery</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="commettee.html">Board Member</a>
+            </li>
+            <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area (will be hidden when article is shown) -->
+    <div id="mainContent" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>News</h2>
+                    <p>Stay informed with our latest reports, financial guides, and cooperative news</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Latest News</h2>
+                    <p>Explore our collection of financial guides, reports, and educational materials</p>
+                </div>
+                
+                <div class="publication-grid">
+                    <!-- Publication 1 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="general-election.webp" alt="General Election">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">2082 Paush 9</div>
+                            <h3>General Assembly Election 2025</h3>
+                            <p>Official notice regarding the upcoming general election for our cooperative members.</p>
+                            <a class="read-more" data-article="1">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Quarterly Report">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">April 5, 2023</div>
+                            <h3>Q1 2023 Financial Report</h3>
+                            <p>Detailed financial performance report for the first quarter of 2023, including growth metrics and member statistics.</p>
+                            <a class="read-more" data-article="2">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 3 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="https://images.unsplash.com/photo-1579328278743-6f6e9256d212?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Annual Report">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">February 20, 2023</div>
+                            <h3>2022 Annual Report</h3>
+                            <p>Complete overview of our cooperative's performance, achievements, and financial standing for the year 2022.</p>
+                            <a class="read-more" data-article="3">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 4 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Investment Guide">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">January 10, 2023</div>
+                            <h3>Smart Investment Strategies</h3>
+                            <p>Learn how to grow your savings with our comprehensive guide to low-risk investment options for members.</p>
+                            <a class="read-more" data-article="4">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 5 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="https://images.unsplash.com/photo-1577720643272-265f0936742f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Newsletter">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">December 15, 2022</div>
+                            <h3>Member Newsletter: Winter Edition</h3>
+                            <p>Latest updates on cooperative events, member success stories, and financial tips for the winter season.</p>
+                            <a class="read-more" data-article="5">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 6 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loan Guide">
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-date">November 5, 2022</div>
+                            <h3>Understanding Loan Options</h3>
+                            <p>Complete guide to our loan products, eligibility criteria, and application process for members.</p>
+                            <a class="read-more" data-article="6">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Annual Reports Section -->
+        <section class="annual-reports">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Annual Reports</h2>
+                    <p>Access our comprehensive yearly performance reports and financial statements</p>
+                </div>
+                
+                <div class="report-cards">
+                    <div class="report-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>2022 Annual Report</h3>
+                        <p>Complete financial review and performance metrics for 2022</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>2021 Annual Report</h3>
+                        <p>Complete financial review and performance metrics for 2021</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>2020 Annual Report</h3>
+                        <p>Complete financial review and performance metrics for 2020</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>2019 Annual Report</h3>
+                        <p>Complete financial review and performance metrics for 2019</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Article Container (Hidden by default) -->
+    <div id="articleContainer" class="article-container">
+        <div class="container">
+            <!-- Back Button -->
+            <a id="backButton" class="article-back-btn">
+                <i class="fas fa-arrow-left"></i> Back to News
+            </a>
+            
+            <!-- Article Content will be dynamically inserted here -->
+            <div id="articleContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: About -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>
+                    Built on trust and innovation, we're committed to helping you achieve
+                    your financial goals with transparency.
+                </p>
+                <div class="social-icons-footer">
+                    <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Contact -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+                    <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+                    <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Article data for each publication
+        const articles = {
+            1: {
+                title: "General Assembly Election 2025",
+                date: "2082 Paush 9",
+                image: "general-election.webp",
+                alt: "General Election",
+                content: `
+                    <h2>Official Announcement: General Assembly Election 2025</h2>
+                    <p>The Indrakamal Multipurpose Cooperative Society Ltd. is pleased to announce the upcoming General Assembly Election 2025. This important event will shape the future leadership of our cooperative and determine the strategic direction for the coming years.</p>
+                    
+                    <h3>Election Details</h3>
+                    <p><strong>Date:</strong> Paush 15, 2082(Corresponding to 24th December 2025)<br>
+                    <strong>Time:</strong> 10:00 AM to 1:00 PM<br>
+                    <strong>Venue:</strong>Cooperative's Office, Durbarmarg (Kathmandu), Nepal</p>
+                    
+                    <h3>Positions Open for Election</h3>
+                    <ul>
+                        <li>Chairperson</li>
+                        <li>Vice-Chairperson</li>
+                        <li>Secretary</li>
+                        <li>Treasurer</li>
+                        <li>Board Members (5 positions)</li>
+                        <li>Audit Committee Members (3 positions)</li>
+                    </ul>
+                    
+                    <h3>Subjects for Discussion:</h3>
+                    <p>To be eligible for candidacy, members must:</p>
+                    <ul>
+                        <li>Regarding the Annual Progress Report and Proposed Work Plan presented by the Chairperson on behalf of the Board of Directors.</li>
+                        <li>Regarding the Annual Report and Proposed Budget presented by the Treasurer on behalf of the Board of Directors.</li>
+                        <li>Regarding the Report of the Supervisory Committee.</li>
+                        <li>Regarding the Balance Sheet, Profit/Loss Account, and Cash Flow Statement, including the financial statements for the fiscal year 2081/082.</li>
+                        <li>Regarding the Appointment and Remuneration of the Auditor for the fiscal year 2081/082.</li>
+                        <li>Regarding the Selection of Representatives from among the shareholders to pass the decisions of the General Meeting.</li>
+                        <li>Regarding the Approval of light/minor decisions made by the Board of Directors during the fiscal year 2081/082.</li>
+                        <li>Regarding the Amendment of the Cooperative's By-laws.</li>
+                        <li>Regarding the Formation of Sub-offices/Branch offices of the Cooperative.</li>
+                        <li>Regarding the Election for the seats of the Board of Directors and the Supervisory Committee.</li>
+                        <li>Miscellaneous.</li>
+                    </ul>
+                    
+                    <h3>By Order of the Board of Directors</h3>
+                    <p>The election will be conducted through a secret ballot system. All members in good standing as of Poush 30, 2081 are eligible to vote. Members are encouraged to review the candidate profiles that will be published on our website two weeks before the election.</p>
+                    
+                    <p>For more information about the election process, nomination forms, or candidate eligibility, please visit our office or contact the election committee at election@indrakamalcoop.com.np.</p>
+                `
+            },
+            2: {
+                title: "Q1 2023 Financial Report",
+                date: "April 5, 2023",
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                alt: "Quarterly Report",
+                content: `
+                    <h2>Q1 2023 Financial Performance Overview</h2>
+                    <p>The first quarter of 2023 has been a period of significant growth and stability for Indrakamal Multipurpose Cooperative. We are pleased to report strong financial performance across all key metrics, demonstrating the resilience of our cooperative model even in challenging economic conditions.</p>
+                    
+                    <h3>Key Financial Highlights</h3>
+                    <ul>
+                        <li><strong>Total Assets:</strong> Increased by 15% to NPR 2.5 billion</li>
+                        <li><strong>Member Deposits:</strong> Grew by 12% to NPR 1.8 billion</li>
+                        <li><strong>Loan Portfolio:</strong> Expanded by 18% with NPR 2.1 billion in disbursements</li>
+                        <li><strong>Net Profit:</strong> NPR 85 million (25% increase from Q1 2022)</li>
+                        <li><strong>Non-Performing Loans:</strong> Maintained at 1.2% (below industry average)</li>
+                    </ul>
+                    
+                    <h3>Operational Achievements</h3>
+                    <p>During Q1 2023, we achieved several important milestones:</p>
+                    <ul>
+                        <li>Added 250 new members, bringing our total membership to 5,850</li>
+                        <li>Launched our new mobile banking app with 3,000+ downloads</li>
+                        <li>Disbursed 450 new loans totaling NPR 450 million</li>
+                        <li>Conducted financial literacy workshops benefiting 500+ members</li>
+                    </ul>
+                    
+                    <h3>Strategic Initiatives</h3>
+                    <p>We have initiated several strategic projects in Q1:</p>
+                    <ul>
+                        <li>Digital transformation project to enhance member services</li>
+                        <li>Expansion of branch network with two new locations approved</li>
+                        <li>Green financing initiative for sustainable projects</li>
+                        <li>Partnership with agricultural suppliers for member benefits</li>
+                    </ul>
+                    
+                    <h3>Looking Ahead</h3>
+                    <p>Based on our Q1 performance, we are confident in achieving our annual targets. The board has approved an interim dividend of 5% on member shares, to be distributed in Q2. We remain committed to our mission of providing accessible financial services while maintaining strong financial health.</p>
+                    
+                    <p>The complete financial statements are available for review at our office during business hours. Members with specific questions about the report are welcome to attend our quarterly member meeting on April 25, 2023.</p>
+                `
+            },
+            3: {
+                title: "2022 Annual Report",
+                date: "February 20, 2023",
+                image: "https://images.unsplash.com/photo-1579328278743-6f6e9256d212?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                alt: "Annual Report",
+                content: `
+                    <h2>2022 Annual Report: A Year of Growth and Resilience</h2>
+                    <p>The year 2022 marked a significant period of recovery and growth for Indrakamal Multipurpose Cooperative. Despite ongoing economic challenges, our cooperative demonstrated remarkable resilience, achieving record growth while maintaining financial stability.</p>
+                    
+                    <h3>Year in Review: Key Achievements</h3>
+                    <ul>
+                        <li><strong>Financial Growth:</strong> Total assets reached NPR 8.2 billion, a 22% increase from 2021</li>
+                        <li><strong>Member Services:</strong> Served over 5,600 members with diverse financial needs</li>
+                        <li><strong>Profitability:</strong> Net profit of NPR 280 million, enabling a 12% dividend distribution</li>
+                        <li><strong>Community Impact:</strong> Invested NPR 15 million in community development projects</li>
+                    </ul>
+                    
+                    <h3>Operational Excellence</h3>
+                    <p>In 2022, we focused on enhancing operational efficiency and member experience:</p>
+                    <ul>
+                        <li>Implemented a new core banking system improving transaction processing by 40%</li>
+                        <li>Reduced loan approval time from 7 days to 3 days on average</li>
+                        <li>Achieved 98% member satisfaction rate in our annual survey</li>
+                        <li>Maintained 99.8% system uptime for digital services</li>
+                    </ul>
+                    
+                    <h3>Financial Highlights</h3>
+                    <ul>
+                        <li><strong>Total Revenue:</strong> NPR 850 million</li>
+                        <li><strong>Operating Expenses:</strong> NPR 420 million</li>
+                        <li><strong>Net Interest Margin:</strong> 4.2%</li>
+                        <li><strong>Capital Adequacy Ratio:</strong> 18% (well above regulatory requirement of 10%)</li>
+                        <li><strong>Return on Assets:</strong> 3.4%</li>
+                        <li><strong>Return on Equity:</strong> 15.2%</li>
+                    </ul>
+                    
+                    <h3>Strategic Initiatives Completed</h3>
+                    <ul>
+                        <li>Digital transformation roadmap implementation</li>
+                        <li>Expansion to three new service locations</li>
+                        <li>Development of agricultural financing products</li>
+                        <li>Enhanced risk management framework</li>
+                    </ul>
+                    
+                    <h3>Acknowledgments</h3>
+                    <p>Our success in 2022 would not have been possible without the trust and support of our members, the dedication of our staff, and the guidance of our board of directors. We extend our sincere gratitude to everyone who contributed to our cooperative's achievements.</p>
+                    
+                    <p>As we look forward to 2023, we remain committed to our mission of empowering members through financial inclusion, innovation, and sustainable growth. The complete audited financial statements are available for member review at our headquarters.</p>
+                `
+            },
+            4: {
+                title: "Smart Investment Strategies",
+                date: "January 10, 2023",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                alt: "Investment Guide",
+                content: `
+                    <h2>Smart Investment Strategies for Cooperative Members</h2>
+                    <p>Making smart investment decisions is crucial for financial security and growth. This guide provides comprehensive strategies tailored specifically for our cooperative members, focusing on low-risk options that align with our cooperative values.</p>
+                    
+                    <h3>Understanding Your Investment Options</h3>
+                    <p>As a member of Indrakamal Multipurpose Cooperative, you have access to several investment vehicles:</p>
+                    <ul>
+                        <li><strong>Member Shares:</strong> Earn dividends while owning a stake in the cooperative</li>
+                        <li><strong>Fixed Deposit Accounts:</strong> Guaranteed returns with various term options</li>
+                        <li><strong>Recurring Deposit Schemes:</strong> Systematic savings with attractive interest rates</li>
+                        <li><strong>Special Savings Products:</strong> Designed for specific goals like education or retirement</li>
+                    </ul>
+                    
+                    <h3>Principles of Smart Investing</h3>
+                    <p>Follow these principles to make informed investment decisions:</p>
+                    <ul>
+                        <li><strong>Diversification:</strong> Spread your investments across different products</li>
+                        <li><strong>Risk Assessment:</strong> Choose investments matching your risk tolerance</li>
+                        <li><strong>Time Horizon:</strong> Align investments with your financial goals</li>
+                        <li><strong>Regular Review:</strong> Monitor and adjust your portfolio periodically</li>
+                    </ul>
+                    
+                    <h3>Recommended Strategies by Life Stage</h3>
+                    
+                    <h4>For Young Members (20-35 years)</h4>
+                    <ul>
+                        <li>Allocate 60% to growth-oriented options</li>
+                        <li>Start with recurring deposits for discipline</li>
+                        <li>Consider long-term fixed deposits</li>
+                        <li>Build emergency fund equal to 6 months' expenses</li>
+                    </ul>
+                    
+                    <h4>For Mid-Career Members (36-50 years)</h4>
+                    <ul>
+                        <li>Balance between growth and stability</li>
+                        <li>Increase fixed deposit allocations</li>
+                        <li>Consider education funds for children</li>
+                        <li>Review insurance coverage adequacy</li>
+                    </ul>
+                    
+                    <h4>For Pre-Retirement Members (51-60 years)</h4>
+                    <ul>
+                        <li>Focus on capital preservation</li>
+                        <li>Shift to shorter-term deposits</li>
+                        <li>Plan systematic withdrawal strategies</li>
+                        <li>Ensure healthcare costs are covered</li>
+                    </ul>
+                    
+                    <h3>Common Investment Mistakes to Avoid</h3>
+                    <ul>
+                        <li>Putting all savings in a single product</li>
+                        <li>Chasing high returns without considering risk</li>
+                        <li>Not reviewing investments regularly</li>
+                        <li>Ignoring tax implications</li>
+                        <li>Making emotional investment decisions</li>
+                    </ul>
+                    
+                    <h3>Getting Professional Advice</h3>
+                    <p>Our cooperative offers free financial counseling services for members. Our certified financial advisors can help you:</p>
+                    <ul>
+                        <li>Create a personalized investment plan</li>
+                        <li>Assess your risk profile</li>
+                        <li>Plan for specific financial goals</li>
+                        <li>Review your existing investments</li>
+                    </ul>
+                    
+                    <p>Remember, the key to successful investing is starting early, investing regularly, and staying informed. Visit our investment desk to explore options that match your financial goals and risk tolerance.</p>
+                `
+            },
+            5: {
+                title: "Member Newsletter: Winter Edition",
+                date: "December 15, 2022",
+                image: "https://images.unsplash.com/photo-1577720643272-265f0936742f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                alt: "Newsletter",
+                content: `
+                    <h2>Winter Edition: Member Newsletter December 2022</h2>
+                    <p>Welcome to our Winter Edition newsletter! As the year comes to a close, we reflect on our achievements and look forward to new opportunities. This edition brings you updates, success stories, and important information for the winter season.</p>
+                    
+                    <h3>Season's Greetings from the Board</h3>
+                    <p>Dear Members,</p>
+                    <p>As we approach the end of 2022, we extend our warmest greetings and sincere appreciation for your continued trust in Indrakamal Multipurpose Cooperative. This year has been remarkable, and your participation has been instrumental in our success. Wishing you and your families a joyful winter season and a prosperous New Year!</p>
+                    
+                    <h3>Member Success Stories</h3>
+                    
+                    <h4>Small Business Growth: Maya's Tailoring Shop</h4>
+                    <p>Maya Shrestha, a member since 2018, expanded her tailoring business with our small enterprise loan. "The NPR 500,000 loan helped me purchase new machines and hire two assistants. My income has doubled, and I can now support my children's education comfortably," she shares.</p>
+                    
+                    <h4>Agricultural Transformation: The Rai Family Farm</h4>
+                    <p>With our agricultural development loan, the Rai family transformed their traditional farm into an organic vegetable operation. "We increased our yield by 60% and now supply to local supermarkets," says Bikash Rai.</p>
+                    
+                    <h3>Winter Financial Tips</h3>
+                    <ul>
+                        <li><strong>Plan for Heating Costs:</strong> Consider our special winter savings plan to cover increased utility bills</li>
+                        <li><strong>Holiday Budgeting:</strong> Use our budgeting tool to plan festive expenses without stress</li>
+                        <li><strong>Year-End Tax Planning:</strong> Consult our advisors for tax-efficient investment decisions</li>
+                        <li><strong>Emergency Preparedness:</strong> Ensure your emergency fund covers 3-6 months of expenses</li>
+                    </ul>
+                    
+                    <h3>Upcoming Events</h3>
+                    <ul>
+                        <li><strong>Dec 20:</strong> Financial Planning Workshop for Young Members</li>
+                        <li><strong>Dec 25:</strong> Cooperative Christmas Celebration (All members invited)</li>
+                        <li><strong>Jan 5, 2023:</strong> New Year Goal Setting Seminar</li>
+                        <li><strong>Jan 15, 2023:</strong> Annual General Meeting Preparation Session</li>
+                    </ul>
+                    
+                    <h3>New Services Launching in January</h3>
+                    <p>We're excited to announce new services starting January 2023:</p>
+                    <ul>
+                        <li><strong>Mobile Wallet Integration:</strong> Seamless digital transactions</li>
+                        <li><strong>Insurance Products:</strong> Health, life, and property insurance</li>
+                        <li><strong>Educational Loans:</strong> Special rates for higher education</li>
+                        <li><strong>Retirement Planning:</strong> Customized pension products</li>
+                    </ul>
+                    
+                    <h3>Year-End Reminders</h3>
+                    <ul>
+                        <li>Submit loan applications before Dec 28 for pre-year-end processing</li>
+                        <li>Review your account statements for accuracy</li>
+                        <li>Update your contact information if changed</li>
+                        <li>Provide feedback through our member satisfaction survey</li>
+                    </ul>
+                    
+                    <h3>Community Corner</h3>
+                    <p>Our cooperative donated NPR 500,000 to local winter relief programs, providing warm clothing and blankets to 200 families in need. Thank you to members who contributed to this initiative.</p>
+                    
+                    <p>Stay connected with us through our social media channels for daily updates and financial tips. Wishing you a warm and prosperous winter season!</p>
+                `
+            },
+            6: {
+                title: "Understanding Loan Options",
+                date: "November 5, 2022",
+                image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                alt: "Loan Guide",
+                content: `
+                    <h2>Complete Guide to Cooperative Loan Products</h2>
+                    <p>Access to affordable credit is one of the primary benefits of cooperative membership. This comprehensive guide explains all loan options available to our members, helping you make informed borrowing decisions that support your financial goals.</p>
+                    
+                    <h3>Types of Loans Available</h3>
+                    
+                    <h4>1. Personal Loans</h4>
+                    <p><strong>Purpose:</strong> Multipurpose use including medical expenses, education, travel, or consumption needs</p>
+                    <ul>
+                        <li><strong>Amount:</strong> Up to NPR 1,000,000</li>
+                        <li><strong>Interest Rate:</strong> 10-12% per annum</li>
+                        <li><strong>Tenure:</strong> 1-5 years</li>
+                        <li><strong>Security:</strong> Guarantor or collateral required for amounts above NPR 300,000</li>
+                    </ul>
+                    
+                    <h4>2. Business/Enterprise Loans</h4>
+                    <p><strong>Purpose:</strong> Working capital, equipment purchase, business expansion</p>
+                    <ul>
+                        <li><strong>Amount:</strong> Up to NPR 5,000,000</li>
+                        <li><strong>Interest Rate:</strong> 9-11% per annum</li>
+                        <li><strong>Tenure:</strong> 1-7 years</li>
+                        <li><strong>Security:</strong> Business assets or property mortgage</li>
+                    </ul>
+                    
+                    <h4>3. Agricultural Loans</h4>
+                    <p><strong>Purpose:</strong> Farm equipment, seeds, fertilizers, irrigation systems, livestock</p>
+                    <ul>
+                        <li><strong>Amount:</strong> Up to NPR 2,000,000</li>
+                        <li><strong>Interest Rate:</strong> 8-10% per annum (subsidized rate for organic farming)</li>
+                        <li><strong>Tenure:</strong> 1-10 years with grace period</li>
+                        <li><strong>Security:</strong> Crop pledge or land mortgage</li>
+                    </ul>
+                    
+                    <h4>4. Home Improvement Loans</h4>
+                    <p><strong>Purpose:</strong> Renovation, repair, or extension of residential property</p>
+                    <ul>
+                        <li><strong>Amount:</strong> Up to NPR 3,000,000</li>
+                        <li><strong>Interest Rate:</strong> 10.5% per annum</li>
+                        <li><strong>Tenure:</strong> Up to 15 years</li>
+                        <li><strong>Security:</strong> Property mortgage</li>
+                    </ul>
+                    
+                    <h4>5. Education Loans</h4>
+                    <p><strong>Purpose:</strong> Tuition fees, books, accommodation for higher education</p>
+                    <ul>
+                        <li><strong>Amount:</strong> Up to NPR 2,500,000</li>
+                        <li><strong>Interest Rate:</strong> 9.5% per annum (special rate for technical education)</li>
+                        <li><strong>Tenure:</strong> Up to 10 years with 1-year grace period after course completion</li>
+                        <li><strong>Security:</strong> Parent/guardian guarantee</li>
+                    </ul>
+                    
+                    <h3>Eligibility Criteria</h3>
+                    <p>To qualify for any loan, members must:</p>
+                    <ul>
+                        <li>Be an active member for at least 6 months</li>
+                        <li>Have regular savings history with the cooperative</li>
+                        <li>Maintain a minimum share balance of NPR 5,000</li>
+                        <li>Have satisfactory credit history (no defaults)</li>
+                        <li>Provide necessary documentation as per loan type</li>
+                    </ul>
+                    
+                    <h3>Application Process</h3>
+                    <ol>
+                        <li><strong>Step 1:</strong> Consultation with loan officer</li>
+                        <li><strong>Step 2:</strong> Complete application form with required documents</li>
+                        <li><strong>Step 3:</strong> Credit assessment and verification</li>
+                        <li><strong>Step 4:</strong> Loan committee review and approval</li>
+                        <li><strong>Step 5:</strong> Documentation and security formalities</li>
+                        <li><strong>Step 6:</strong> Disbursement of funds</li>
+                    </ol>
+                    
+                    <h3>Required Documents</h3>
+                    <ul>
+                        <li>Completed loan application form</li>
+                        <li>Copy of citizenship certificate</li>
+                        <li>Recent photograph (2 copies)</li>
+                        <li>Income proof (salary slip/business registration/tax clearance)</li>
+                        <li>Collateral documents (if applicable)</li>
+                        <li>Guarantor documents (if applicable)</li>
+                    </ul>
+                    
+                    <h3>Special Benefits for Members</h3>
+                    <ul>
+                        <li><strong>Interest Discount:</strong> 0.5% reduction for automatic payment setup</li>
+                        <li><strong>Top-up Facility:</strong> Additional borrowing on existing loans</li>
+                        <li><strong>Flexible Repayment:</strong> Option to change installment dates</li>
+                        <li><strong>Loan Insurance:</strong> Optional coverage for loan protection</li>
+                        <li><strong>Early Repayment:</strong> No penalty for early loan closure</li>
+                    </ul>
+                    
+                    <h3>Tips for Successful Loan Application</h3>
+                    <ul>
+                        <li>Maintain good savings history</li>
+                        <li>Keep all documents updated and ready</li>
+                        <li>Apply for appropriate amount based on repayment capacity</li>
+                        <li>Choose tenure that matches your cash flow</li>
+                        <li>Consult with our advisors before applying</li>
+                    </ul>
+                    
+                    <p>Our loan officers are available Monday to Saturday, 10 AM to 4 PM to assist with your queries and applications. Visit our office or call 01-5925888 to schedule an appointment.</p>
+                `
+            }
+        };
+
+        // Function to show article
+        function showArticle(articleId) {
+            const article = articles[articleId];
+            if (!article) return;
+            
+            // Hide main content
+            document.getElementById('mainContent').classList.add('hidden');
+            
+            // Show article container
+            document.getElementById('articleContainer').style.display = 'block';
+            
+            // Populate article content
+            const articleContent = document.getElementById('articleContent');
+            articleContent.innerHTML = `
+                <div class="article-header">
+                    <h1>${article.title}</h1>
+                    <div class="article-meta">Published on ${article.date}</div>
+                </div>
+                <img src="${article.image}" alt="${article.alt}" class="article-image">
+                <div class="article-content">
+                    ${article.content}
+                </div>
+            `;
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Update page title
+            document.title = `${article.title} - Indrakamal Multipurpose Cooperative`;
+        }
+
+        // Function to go back to main page
+        function goBackToMain() {
+            // Show main content
+            document.getElementById('mainContent').classList.remove('hidden');
+            
+            // Hide article container
+            document.getElementById('articleContainer').style.display = 'none';
+            
+            // Restore original page title
+            document.title = "Publications - Indrakamal Multipurpose cooperative";
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Event listeners when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all "Read More" links
+            const readMoreLinks = document.querySelectorAll('.read-more');
+            readMoreLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const articleId = this.getAttribute('data-article');
+                    showArticle(articleId);
+                });
+            });
+            
+            // Add click event to back button
+            document.getElementById('backButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                goBackToMain();
+            });
+            
+            // Also support browser back button
+            window.addEventListener('popstate', function() {
+                if (document.getElementById('articleContainer').style.display === 'block') {
+                    goBackToMain();
+                }
+            });
+        });
+
+        // Function to handle browser history
+        function updateHistory(articleId) {
+            const article = articles[articleId];
+            if (article) {
+                history.pushState({ articleId: articleId }, article.title, `?article=${articleId}`);
+            }
+        }
+
+        // Check for article parameter in URL on page load
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('article');
+            if (articleId && articles[articleId]) {
+                showArticle(articleId);
+                updateHistory(articleId);
+            }
+        });
+    </script>
+    <script src="function.js"></script>
+</body>
+</html>

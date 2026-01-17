@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Be a Memeber - Indrakamal Multipurpose Cooperative</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="/title_logo.webp">
+</head>
+<body>
+
+
+
+      <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.webp">
+        </div>
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+   
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="gallery.html">Gallery</a>
+            </li>
+            
+              <li class="menu-item">
+                <a href="commettee.html">Board Members</a>
+            </li>
+              <li class="menu-item active">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+    
+
+<section class="coop-contact-section">
+    <div class="coop-container">
+        <div class="coop-content">
+            <h2>Join Indrakamal Multipurpose<br> Co-operative</h2>
+            <p>Empowering communities through cooperative banking. We provide accessible financial services with traditional values and modern convenience, serving the people of Nepal with trust and transparency.</p>
+            
+           
+            
+            <div class="coop-testimonial">
+                <div class="testimonial-text">
+                    "This cooperative helped me start my small business with an affordable loan. Their support has been invaluable for my family's financial growth."
+                </div>
+                <div class="testimonial-author">- Keshav Paudel, Indrakamal</div>
+            </div>
+        </div>
+        
+        <div class="coop-form-container">
+           <form class="coop-form" id="coopForm" action="https://formspree.io/f/meoykoek" method="POST">
+    <h3>Membership & Services Inquiry</h3>
+    <p>Fill out the form to learn more about our cooperative banking services</p>
+    
+    <!-- Add hidden field to specify recipient email -->
+    <input type="hidden" name="_recipient" value="indrakamalmultipurpose@gmail.com">
+    
+    <!-- Optional: Keep a copy in your Formspree dashboard -->
+    <input type="hidden" name="_cc" value="your-email@example.com">
+    
+    <div class="form-group">
+        <input type="text" id="name" name="name" required>
+        <label for="name">Full Name</label>
+    </div>
+    
+    <div class="form-group">
+        <input type="tel" id="phone" name="phone" required>
+        <label for="phone">Phone Number</label>
+    </div>
+    
+    <div class="form-group">
+        <select id="service" name="service" required>
+            <option value="" disabled selected></option>
+            <option value="membership">Cooperative Membership</option>
+            <option value="savings">Savings Account</option>
+            <option value="loan-home">Home Loan</option>
+            <option value="loan-business">Business Loan</option>
+            <option value="loan-personal">Personal Loan</option>
+            <option value="fixed-deposit">Fixed Deposit</option>
+            <option value="other">Other Services</option>
+        </select>
+        <label for="service">Service of Interest</label>
+    </div>
+    
+    <div class="form-group">
+        <textarea id="message" name="message" rows="3"></textarea>
+        <label for="message">Additional Information (Optional)</label>
+    </div>
+    
+    <div class="checkbox-group">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions and consent to being contacted about cooperative services</label>
+    </div>
+    
+    <button type="submit" class="submit-btn">Submit Inquiry</button>
+</form>
+        </div>
+    </div>
+</section>
+
+<style>
+.coop-contact-section {
+    padding: 50px 120px;
+    background: linear-gradient(135deg, #f8fff8 0%, #e6f7e6 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+.coop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+}
+
+.coop-content {
+    flex: 1;
+    min-width: 250px;
+    color: #2c3e50;
+}
+
+.coop-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #27ae60;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.coop-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.coop-features {
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.3);
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.coop-testimonial {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #27ae60;
+    position: relative;
+}
+
+.coop-testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    font-size: 2.5rem;
+    color: #27ae60;
+    opacity: 0.3;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.coop-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.coop-form {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(39, 174, 96, 0.1);
+}
+
+.coop-form h3 {
+    color: #27ae60;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.coop-form > p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px 10px;   /* reduced padding */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.85rem;  /* slightly smaller */
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+    background: #ffffff;
+}
+
+.form-group label {
+    position: absolute;
+    top: 8px;   /* adjusted from 12px */
+    left: 10px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 0.85rem; /* smaller */
+    background: transparent;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group select:focus ~ label,
+.form-group select:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+    top: -8px;   /* lifted slightly less */
+    left: 8px;
+    font-size: 0.75rem;  /* reduced */
+    background: #ffffff;
+    padding: 0 4px;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2327ae60' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    transform: scale(1.1);
+    accent-color: #27ae60;
+}
+
+.checkbox-group label {
+    font-size: 0.85rem;
+    color: #2c3e50;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 40%;
+    padding: 8px;  /* slightly smaller */
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;  /* reduced */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .coop-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .coop-content, .coop-form-container {
+        width: 100%;
+    }
+    
+    .coop-content h2 {
+        font-size: 1.7rem;
+    }
+    
+    .coop-form {
+        padding: 20px;
+    }
+    
+    .feature {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .forms-pdf{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+    .feature-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coop-contact-section {
+        padding: 30px 15px;
+    }
+    
+    .coop-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .coop-form {
+        padding: 18px;
+    }
+}
+
+
+.download-form{
+    padding: 20px 60px;
+    margin: 10px;
+    border: 1px solid #27ae60;
+}
+.download-form h2{
+    padding-bottom: 20px;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 200;
+}
+.download-btn {
+      display: inline-block;
+      padding: 14px 18px;
+      border: 1px solid #27ae60;
+      color: #02642b;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 4px;
+      
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .download-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    .forms-pdf{
+        display: grid;
+        grid-template-columns: 25% 25% 25%;
+        gap: 30px;
+        justify-content: space-between;
+    }
+     .forms-pdf h3{
+        color: #02642b;
+        margin-bottom: 10px; 
+     }
+</style>
+
+
+<section class="download-form">
+    <h2>Online Application Form</h2>
+  <div class="forms-pdf">
+
+    <div class="form-pdf">
+      <h3>Account Opening Form</h3>
+      <a href="#" class="download-btn" data-pdf="INDRAKAMAL MULTIPURPOSE CO-OPERATIVE LTD.-account_opening_form-02.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+    <div class="form-pdf">
+      <h3>AABHADHIK BACHAT RASHID</h3>
+      <a href="#" class="download-btn" data-pdf="IndraKamal Multipropose - Aabadhik_Bachat-01.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+    <div class="share-form.pdf">
+      <h3>Withdrawal Slip</h3>
+      <a href="#" class="download-btn" data-pdf="INDRAKAMAL MULTIPURPOSE CO-OPERATIVE LTD. Withdrawal Slip-01.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+     <div class="share-form.pdf">
+      <h3>Deposit Slip</h3>
+      <a href="#" class="download-btn" data-pdf="INDRAKAMAL MULTIPURPOSE CO-OPERATIVE LTD. Deposit Slilp-01.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+     <div class="share-form.pdf">
+      <h3>Tamsukh</h3>
+      <a href="#" class="download-btn" data-pdf="INDRAKAMAL MULTIPURPOSE CO-OPERATIVE LTD Tamasuk-01.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+    <div class="share-form.pdf">
+      <h3>Share Form</h3>
+      <a href="#" class="download-btn" data-pdf="INDRAKAMAL MULTIPURPOSE CO-OPERATIVE LTD Share Form-01.pdf">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download Form
+      </a>
+    </div>
+
+      
+
+
+
+  </div>
+ <script>
+// Form submission handler to prevent redirect
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('coopForm');
+    
+    if (form) {
+        // Create and append success/error message elements if they don't exist
+        if (!document.getElementById('successMessage')) {
+            const successMsg = document.createElement('div');
+            successMsg.id = 'successMessage';
+            successMsg.style.cssText = 'display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border-radius: 6px; text-align: center;';
+            successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your inquiry has been submitted successfully.';
+            form.appendChild(successMsg);
+        }
+        
+        if (!document.getElementById('errorMessage')) {
+            const errorMsg = document.createElement('div');
+            errorMsg.id = 'errorMessage';
+            errorMsg.style.cssText = 'display: none; margin-top: 20px; padding: 15px; background-color: #f8d7da; color: #721c24; border-radius: 6px; text-align: center;';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Sorry, there was an error submitting your form. Please try again.';
+            form.appendChild(errorMsg);
+        }
+        
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // This is what prevents the redirect
+            
+            // Get the submit button
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            if (successMessage) successMessage.style.display = 'none';
+            if (errorMessage) errorMessage.style.display = 'none';
+            
+            try {
+                // Create FormData from the form
+                const formData = new FormData(form);
+                
+                // Log for debugging (remove in production)
+                console.log('Form data:', Object.fromEntries(formData));
+                
+                // Send to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json().catch(() => ({}));
+                    console.log('Success response:', data);
+                    
+                    // Show success message
+                    if (successMessage) {
+                        successMessage.style.display = 'block';
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Hide success message after 10 seconds
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 10000);
+                    }
+                    
+                    // Reset the form
+                    form.reset();
+                    
+                } else {
+                    const errorText = await response.text();
+                    console.error('Formspree error:', errorText);
+                    throw new Error(`Submission failed: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                
+                // Show error message
+                if (errorMessage) {
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Hide error message after 10 seconds
+                    setTimeout(() => {
+                        errorMessage.style.display = 'none';
+                    }, 10000);
+                }
+            } finally {
+                // Always restore button to original state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+
+
+//for pdf download
+document.querySelectorAll('.download-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const pdfFile = this.getAttribute('data-pdf');
+
+    // Open PDF in new tab
+    window.open(pdfFile, '_blank');
+  });
+});
+
+</script>
+  </section>
+
+
+
+
+
+
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. 
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer></p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="function.js"></script>
+
+</body>
+</html>

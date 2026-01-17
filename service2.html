@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Indrakamal Multipurpose Cooperative</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="/title_logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="header-footer.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8faf8;
+            color: #333;
+            line-height: 1.6;
+            padding: px;
+        }
+
+        .hero{
+            height: 300px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+        
+        
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0d3b2e;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #0d3b2e, #1c5e8a);
+            border-radius: 2px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+        
+        .service-card {
+            text-align: left;
+            transition: transform 0.3s ease;
+            width: 190px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0d3b2e;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        
+        /* Loan Services */
+        .loan-services {
+            margin-top: 50px;
+        }
+        
+        .loan-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .loan-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .loan-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .loan-grid {
+                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container{
+                padding-left: 17px;
+            }
+            .hero-content h3{
+                margin-bottom: 0px;
+            }
+
+            .hero{
+                height: 160px;
+            }
+
+             .service-card {
+            text-align: left;
+            transition: transform 0.3s ease;
+            width: 150px;
+            
+        }
+         .loan-card {
+            text-align: left;
+            transition: transform 0.3s ease;
+            width: 150px;
+        }
+            
+            .service-image {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.webp">
+        </div>
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+   
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item active">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="gallery.html">Gallery</a>
+            </li>
+            
+              <li class="menu-item">
+                <a href="commettee.html">Board Members</a>
+            </li>
+             <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>Our Services</h2>
+            <p>Discover financial solutions designed to help you achieve your goals</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+          
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .hero-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .hero-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <!-- Hero Section -->
+        
+        <!-- Savings Services -->
+<section class="savings-services">
+    <div class="section-title">
+        <h2>Savings Services</h2>
+    
+    
+    <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/1.webp" alt="Regular Savings">
+            </div>
+            <h3>Sadharan Bachat</h3>
+            <p>General savings account for secure and reliable saving with consistent growth.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/2.webp" alt="Fixed Deposits">
+            </div>
+            <h3>Bisesh Bachat</h3>
+            <p>Special savings scheme offering attractive benefits for long-term financial stability.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/3.webp" alt="Recurring Deposits">
+            </div>
+            <h3>aabadhik Bachat</h3>
+            <p>Business-oriented savings plan designed for traders, entrepreneurs, and professionals.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/4.webp" alt="Senior Citizen">
+            </div>
+            <h3>Samuhik Bachat</h3>
+            <p>Group savings account that promotes teamwork, cooperation, and collective growth.</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/5.webp" alt="Children's Savings">
+            </div>
+            <h3>Diamond Bachat</h3>
+            <p>Premium savings scheme offering exclusive high-value financial services and rewards.</p>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/6.webp" alt="Women's Savings">
+            </div>
+            <h3>Naari Kramic Bachat</h3>
+            <p>Step-by-step savings plan designed for women’s financial security and independence.</p>
+        </div>
+        
+        <!-- Card 7 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/7.webp" alt="Salary Accounts">
+            </div>
+            <h3>Baal vabishye Bachat</h3>
+            <p>Children’s savings account helping parents secure their kids’ financial future.</p>
+        </div>
+        
+        <!-- Card 8 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/8.webp" alt="Current Accounts">
+            </div>
+            <h3>Niyemit Mashik Bachat</h3>
+            <p>Monthly savings scheme encouraging discipline through regular deposits every month.</p>
+        </div>
+        
+        <!-- Card 9 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/9.webp" alt="Tax Saving">
+            </div>
+            <h3>Jestha Nagarik Bachat</h3>
+            <p>Special account created exclusively for senior citizens with better interest rates.</p>
+        </div>
+        
+        <!-- Card 10 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/10.webp" alt="Education Savings">
+            </div>
+            <h3>365 Dine Bachat</h3>
+            <p>Fixed-term savings deposit designed for exactly 375 days with guaranteed benefits.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Loan Services -->
+<section class="loan-services">
+    <div class="section-title">
+        <h2>Loan Services</h2>
+    </div>
+    
+    <div class="services-grid loan-grid">
+        <!-- Card 11 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/11.webp" alt="Retirement Savings">
+            </div>
+            <h3>Samuhik jamani Karja</h3>
+            <p>Group guarantee loan where members support each other’s financial responsibilities.</p>
+        </div>
+        
+        <!-- Card 12 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/12.webp" alt="Emergency Fund">
+            </div>
+            <h3>Byabashayik Karja</h3>
+            <p>Business loan designed to support entrepreneurs in trade and commercial growth.</p>
+        </div>
+
+        <!-- Loan Card 1 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/13.webp" alt="Personal Loans">
+            </div>
+            <h3>Krisi Karja</h3>
+            <p>Agricultural loan facility provided to farmers for crops, tools, and cultivation.</p>
+        </div>
+        
+        <!-- Loan Card 2 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/14.webp" alt="Home Loans">
+            </div>
+            <h3>Saikshik Karja</h3>
+            <p>Education loan scheme helping students and parents cover important study expenses.</p>
+        </div>
+        
+        <!-- Loan Card 3 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/15.webp" alt="Education Loans">
+            </div>
+            <h3>Gharelu Udhyog Karja</h3>
+            <p>Loan designed to support small, cottage, and household-based industries effectively.</p>
+        </div>
+        
+        <!-- Loan Card 4 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/16.webp" alt="Vehicle Loans">
+            </div>
+            <h3>Muddhati Bachat Dhito Karja</h3>
+            <p>Loan available against fixed deposit savings for emergency or planned needs.</p>
+        </div>
+        
+        <!-- Loan Card 5 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/17.webp" alt="Business Loans">
+            </div>
+            <h3>Udhyamshil Karja</h3>
+            <p>Entrepreneurship loan created to support startups, innovators, and small businesses.</p>
+        </div>
+        
+        <!-- Loan Card 6 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="/18.webp" alt="Agricultural Loans">
+            </div>
+            <h3>Dhito Karja</h3>
+            <p>Secured loan provided against collateral such as land, property, or assets.</p>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+
+
+    <section class="process-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>Simple steps to access our services and become a member</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Become a Member</h3>
+                    <p>Complete a simple membership application and make your initial share deposit.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Choose Services</h3>
+                    <p>Select from our range of financial products that suit your needs.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Submit Application</h3>
+                    <p>Provide necessary documentation and submit your application.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Enjoy Benefits</h3>
+                    <p>Start using your account and enjoy member benefits and services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .process-section {
+        padding: 60px 0;
+        background: #e8f5e9;
+        position: relative;
+    }
+    
+    .process-steps {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    
+    .process-steps::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #0b0996;
+        z-index: 1;
+    }
+    
+    .process-step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+    }
+    
+    .step-number {
+        width: 80px;
+        height: 80px;
+        background: #2e8b57;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 auto 20px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .process-step:hover .step-number {
+        transform: scale(1.1);
+        background: #1f6e44;
+    }
+    
+    .step-content h3 {
+        color: #2e8b57;
+        margin-bottom: 15px;
+    }
+    
+    .step-content p {
+        color: #666;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .process-steps {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .process-steps::before {
+            display: none;
+        }
+    }
+</style>
+
+
+
+
+
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- POPUP -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-box">
+        <span class="close-btn">&times;</span>
+        <div id="popup-content"></div>
+    </div>
+</div>
+
+<style>
+    /* POPUP BACKDROP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* POPUP CARD */
+.popup-box {
+    background: #fff;
+    padding: 20px;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: -8px;
+    right: 4px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+
+.close-btn:hover{
+    color: red;
+}
+/* TABLE INSIDE POPUP */
+.popup-box h2 {
+    background: green;
+    color: #fff;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.popup-box table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.popup-box th {
+    background: #1c5e8a;
+    color: #fff;
+    padding: 8px;
+}
+
+.popup-box td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+</style>
+
+<script>
+// TABLE DATA
+const TABLES = {
+    
+    
+   
+    
+    "Bisesh Bachat": `
+        <h2>विशेष बचत</h2>
+        <table>
+            <tr><th>अवधि</th><th>व्याज</th></tr>
+            <tr><td>६ महिना</td><td>८%</td></tr>
+            <tr><td>१ वर्ष</td><td>११%</td></tr>
+            <tr><td>२ वर्ष</td><td>१२%</td></tr>
+        </table>
+    `,
+    
+    "aabadhik Bachat": `
+        <h2>आवधीक बचत</h2>
+       <table>
+            <tr><th>अवधि</th><th>व्याज</th></tr>
+            <tr><td>६ महिना</td><td>८%</td></tr>
+            <tr><td>१ वर्ष</td><td>१०%</td></tr>
+            <tr><td>२ वर्ष</td><td>११%</td></tr>
+            <tr><td>३ वर्ष</td><td>१२%</td></tr>
+        </table>
+    `,
+    
+    "Samuhik Bachat": `
+        <h2>समूहिक बचत</h2>
+        <table>
+            <tr><th>अवधि</th><th>व्याज</th></tr>
+            <tr><td>६ महिना</td><td>८%</td></tr>
+            <tr><td>१ वर्ष</td><td>११%</td></tr>
+        </table>
+    `,
+    
+    "Sadharan Bachat": `
+        <h2>साधारण बचत</h2>
+        <table>
+        <tr><th>बचत योजना</th><th>व्याजदार</th></tr>
+        <tr><td>साधारण बचत - २००/-</td><td>५% </td></tr>
+        <tr><td>नारी बचत - २००/-</td><td>६%</td></tr>
+        <tr><td>विशेष  बचत - ५०००/-</td><td>७%</td></tr>
+        <tr><td>व्यवसायी बचत - ५०००/-</td><td>५% </td></tr>
+        <tr><td>सामूहिक बचत - ५०००/-</td><td>७% </td></tr>
+        <tr><td>डायमण्ड बचत - १०००००/-</td><td>१०%</td></tr>
+    </table>
+    `,
+    
+    "Naari Kramic Bachat": `
+        <h2>नारी क्रमिक बचत</h2>
+
+        <p>
+            हालको वर्तमान अवस्थामा महिला उद्यमशीलको लागि यो बचत खाता योजना संचालनमा ल्याइएको छ।<br>
+
+१) एकमुष्ठ बचत व्यवस्था रहेको छ। <br>
+२) दैनिक रुपमा रु. २००/- भन्दा माथि खातामा जम्मा गर्न सकिनेछ। <br>
+३) समय अवधि समाप्त भएपछि एकमुष्ठ रुपमा साँवा र ब्याज प्राप्त गर्न सकिनेछ। <br>
+४) संस्थाद्वारा बेलाबेलामा गरिने कार्यक्रमहरुमा प्रोत्साहन स्वरुप उपहारहरु प्रदान गरिने छ।
+            </P>
+                    <table>
+        <tr><th>अवधी</th><th>व्याजदर</th></tr>
+        <tr><td>६ महिना</td><td>९%</td></tr>
+        <tr><td>१ वर्ष</td><td>११%</td></tr>
+        <tr><td>२ वर्ष</td><td>१२%</td></tr>
+        <tr><td>३ वर्ष</td><td>१३%</td></tr>
+    </table>
+
+    `,
+    
+    "Baal vabishye Bachat": `
+        <h2>बाल भविष्य बचत</h2>
+
+
+      <p>  बालबालिकाको लागि संस्थाद्वारा दिईएको सेवाहरु<br>
+१) १६ वर्ष भन्दा मुनिका बालबालिकाको लागि निःशुल्क खाता खोली खाता संचालन गर्ने व्यवस्था गरिएको छ। <br>
+२) संस्थाद्वारा बेलाबेलामा गरिने कार्यक्रमहरुमा बालबालिकाहरुको निमित्त सेवा तथा उपहार प्रदान गरिने छ। <br>
+३) बाल बचत खातामा रु. ५,०००/- (पाँच हजार) भन्दा माथि बचत गर्ने बालबालिकाको लागि जन्म दिनको अवसरमा उपहार प्रदान गरिनेछ।<br>
+ ४) अग्रिम रुपमा ब्याज भुक्तानी वा तीन-तीन महिनामा बचत अनुरुप ब्याज गणना गरी ब्याज प्रदान गर्ने व्यवस्था गरिएको छ।<br>
+  ५) समयावधि समाप्त भएपछि एकमुष्ठ साँवा र ब्याज प्रदान गरिनेछ।</p>
+     <table>
+        <tr><th>अवधी</th><th>व्याजदर</th></tr>
+        <tr><td>६ महिना</td><td>९%</td></tr>
+        <tr><td>१ वर्ष</td><td>११%</td></tr>
+        <tr><td>२ वर्ष</td><td>१२%</td></tr>
+        <tr><td>३ वर्ष</td><td>१३%</td></tr>
+    </table>
+    `,
+    
+    "Niyemit Mashik Bachat": `
+        <h2>नियमित मासिक बचत</h2>
+        <table>
+        <tr><th>अवधी</th><th>व्याजदर</th></tr>
+        <tr><td>६ महिना</td><td>८%</td></tr>
+        <tr><td>१ वर्ष</td><td>११%</td></tr>
+        <tr><td>२ वर्ष</td><td>१२%</td></tr>
+        <tr><td>३ वर्ष</td><td>१३%</td></tr>
+    </table>
+    `,
+    
+    "Jestha Nagarik Bachat": `
+        <h2>जेष्ठ नागरिक बचत</h2>
+            <table>
+        <tr><th>अवधी</th><th>व्याजदर</th></tr>
+        <tr><td>६ महिना</td><td>९%</td></tr>
+        <tr><td>१ वर्ष</td><td>११%</td></tr>
+        <tr><td>२ वर्ष</td><td>१२%</td></tr>
+        <tr><td>३ वर्ष</td><td>१३%</td></tr>
+    </table>
+
+    `,
+    
+    "365 Dine Bachat": `
+        <h2>३६५ दिन बचत</h2>
+       <table>
+        <tr><th>नियमित बचत</th><th>एकमुष्ठ</th></tr>
+        <tr><td>रु.१००/-</td><td>रु.४०,०००/-</td></tr>
+        <tr><td>रु.२००/-</td><td>रु.८०,०००/-<td></tr>
+        <tr><td>रु.२५०/-</td><td>रु.१,००,०००/-</td></tr>
+        <tr><td>रु.५००/-</td><td>रु.२,००,०००/-<td></tr>
+                <tr><td>रु.१०००/-</td><td>रु.४,००,०००/-<td></tr>
+                        <tr><td>रु.२०००/-</td><td>रु.८,००,०००/-<td></tr>
+    </table>
+    <p> ३६५ दिने किस्ता अनिवार्य हुनुपर्नेछ।</p>
+
+    `,
+   
+    "Niyemit Mashik Bachat": `
+        <h2>नियमित मासिक बचत</h2>
+        <p>
+     हालको वर्तमान अवस्थामा मध्यनजर गरी यो बचत खाता योजनामा संचालनमा ल्याइएको छ। <br>
+
+१) मासिक रुपमा ५ हजार जम्मा गर्न सकिनेछ। 
+<br>२) यो योजनाको अवधि २ वर्ष रहेको छ। <br>
+३) समय अवधि समाप्त भएपछि एकमुष्ठ रुपमा साँवा र ब्याज प्राप्त गर्न सकिनेछ।<br>
+ ४) संस्थाद्वारा बेलाबेलामा गरिने कार्यक्रमहरुमा प्रोत्साहन स्वरुप उपहारहरु प्रदान गरिने छ।</p>
+    
+
+    `,
+   
+
+};
+
+// ATTACH CLICK EVENT TO ALL CARDS
+document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", () => {
+        let title = card.querySelector("h3").innerText.trim();
+
+        if (TABLES[title]) {
+            document.getElementById("popup-content").innerHTML = TABLES[title];
+            document.getElementById("popup").style.display = "flex";
+        }
+    });
+});
+
+// CLOSE BUTTON
+document.querySelector(".close-btn").onclick = () => {
+    document.getElementById("popup").style.display = "none";
+};
+
+// CLICK OUTSIDE POPUP CLOSE
+document.getElementById("popup").addEventListener("click", (e) => {
+    if (e.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+    }
+});
+</script>
+
+
+   
+
+
+
+
+
+<script src="function.js"></script>
+
+
+    
+</body>
+</html>

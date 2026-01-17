@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Indrakamal Multipurpose Cooperative</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/title_logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <style>
+        /* Global Styles - Updated to green and red theme */
+        :root {
+    --primary-green: #2e8b57;
+    --primary-red: #02023f; /* dark blue */
+    --light-green: #e8f5e9;
+    --light-red: #ffebee;
+    --dark-green: #1b5e20;
+    --dark-red: #010157; /* dark blue */
+    --accent-green: #43a047;
+    --accent-red: #0d0d3b; /* dark blue */
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #fff;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-green);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+       
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Election Images/4.webp') no-repeat center center/cover;
+            aspect-ratio: 1300 / 350;
+            display: flex;
+            align-items: last baseline;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #33333369;
+            
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* About Section */
+        .about {
+            
+            padding: 10px 0;
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+           
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 80px 0;
+            background-color: var(--light-green);
+        }
+        
+        .mission-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .mission-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 320px;
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--primary-red);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .mission-card-content {
+            padding: 25px;
+        }
+        
+        .mission-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .mission-card p {
+            color: var(--text-light);
+        }
+        
+        /* History Section */
+        .history {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-red);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--light-green);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 3px solid var(--primary-green);
+        }
+        
+        .timeline-content h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            color: var(--text-light);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-red);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: var(--light-green);
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--primary-red);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-content {
+            padding: 20px;
+        }
+        
+        .team-member h3 {
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: var(--light-green);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--primary-green);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-item i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .value-item h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+        
+        .value-item p {
+            color: var(--text-light);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+        
+       
+        
+        /* Members Gallery Section */
+        .members-gallery3 {
+            padding: 60px 90px;
+            text-align: center;
+            
+        }
+
+        .gallery-title3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--dark-green);
+        }
+
+        .gallery-grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .member-card3 {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .member-card3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+            transition: transform 0.5s ease;
+        }
+
+       
+
+        .member-card3:hover img {
+            transform: scale(1.05);
+        }
+
+        .member-info3 {
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            padding-bottom: 50px;
+            padding: 14px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            height: 100px;
+            
+        }
+
+       
+
+        .member-info3 h4 {
+            margin: 0;
+            
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .member-info3 p {
+            margin: px 0 0;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 0px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .gallery-grid3 {<p><span style="font-weight: bold;">Indrakamal Multipurpose Co-operative Limited</span> is a legally recognized cooperative institution, authorized by the Provincial Government under the Cooperative Act, 2076 (2019 A.D.), to operate financial transactions. The organization's head office is located in Tripureshwor, Kathmandu-1. Its management committee comprises highly experienced professionals and managers with extensive expertise in the financial sector.
+
+<br>The primary objective of the cooperative is to foster a culture of saving among its members, mobilize these savings into accessible and affordable loans, and channel them towards productive sectors, services, businesses, and other economic activities. In doing so, the cooperative seeks to uplift the social and economic well-being of its members.
+
+<br>Guided by a strong service-oriented philosophy, the institution prioritizes the welfare of its members over profit. It strictly adheres to the National Cooperative Act and cooperative principles, ensuring that its members receive high-quality, modern, and reliable financial services.
+
+<br>Furthermore, the cooperative is committed to enhancing financial accessibility, strengthening the national economy, improving the standard of living of its members, boosting production, creating employment opportunities, contributing to national development, and generating a multiplier effect of savings. With these commitments, Indrakamal Multipurpose Co-operative Limited aims to remain a leading institution among its peers.     
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .about-text, .about-image {
+                flex: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+            }
+            
+            .members-gallery3 {
+                padding: 60px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid3 {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+      <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.webp">
+        </div>
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item active">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+            <li class="menu-item">
+                <a href="gallery.html">Gallery</a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="commettee.html">Board Member</a>
+            </li>
+             <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Growing Together, Building Futures</h2>
+                <p>Indrakamal Multipurpose Cooperative is a member-owned financial institution dedicated to community-driven growth. As a newly established cooperative, we provide sustainable financial services, agricultural support, and local empowerment programs that prioritize member welfare over profit.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who We Are</h2>
+                <p>Gndrakamal is a member-owned cooperative dedicated to providing inclusive and sustainable services to our community.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Cooperative Story</h3>
+                    <p style="text-align: justify;"><span style="font-weight: bold;">"Indrakamal Multipurpose Co-operative Limited"</span> is an organization granted approval to conduct financial transactions under the Co-operative Act 2076, with permission from the Provincial Government. The organization’s principal office is located at Kathmandu-1, Durbarmarg. The management level of this organization consists of experienced and successful individuals who have been active in the financial sector for a long time.
+
+The organization's main objective is to strengthen its current financial transactions securely, value the hard work of the community, and integrate small capital. It aims to increase investments and boost profit according to its objective by playing an active and functional role in the business sector, agricultural sector, social service sector, and other sectors. This is done to improve the economic standard by providing concessional loans to members, create an entrepreneurial and skilled-based society, and move forward impartially while respecting the value, recognition, development, and law of a multipurpose co-operative in the process of national economic development with fairness and selflessness
+                </div>
+                <div class="about-image">
+                    <img src="story.webp" alt="Team meeting at GreenLeaf Cooperative">
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span style="color: #0a1069;">Mission</span> & Vision</h2>
+                <p>Guided by cooperative values, we work to create financial wellbeing for all our members.</p>
+            </div>
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <img src="mission.webp" alt="Our Mission">
+                    <div class="mission-card-content">
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible financial services that empower our members to achieve their financial goals through savings, responsible credit, and financial education.</p>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <img src="vision.webp" alt="Our Vision">
+                    <div class="mission-card-content">
+                        <h3>Our Vision</h3>
+                        <p>To be the leading financial cooperative that transforms communities through ethical banking, financial inclusion, and sustainable development.</p>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <img src="value.webp" alt="Our Values">
+                    <div class="mission-card-content">
+                        <h3>Our Values</h3>
+                        <p>Integrity, transparency, social responsibility, and member participation guide everything we do at GreenLeaf Credit Cooperative.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="workflow">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Workflow</h2>
+            <p>How we serve our members step by step</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Step 1: Membership</h3>
+                    <p>Individuals join our cooperative by becoming members and opening a savings account.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Step 2: Regular Savings</h3>
+                    <p>Members save regularly, building financial discipline and strengthening our community fund.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Step 3: Credit Facilities</h3>
+                    <p>We provide affordable loans to members for personal, business, or emergency needs.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Step 4: Support & Guidance</h3>
+                    <p>Our cooperative offers financial literacy, guidance, and support to help members succeed.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Step 5: Community Growth</h3>
+                    <p>Through unity, savings, and cooperation, we aim for collective prosperity and community development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Cooperative Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Voluntary Membership</h3>
+                    <p>Open to all without gender, social, racial, political or religious discrimination.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-democrat"></i>
+                    <h3>Democratic Control</h3>
+                    <p>One member, one vote - regardless of how much money a member has invested.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Member Participation</h3>
+                    <p>Members actively participate in setting policies and making decisions.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>Autonomy & Independence</h3>
+                    <p>We maintain our democratic member control while working with other organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Become a member of GreenLeaf Credit Cooperative and start benefiting from our member-focused financial services today.</p>
+            <a href="#" class="btn">Join Now</a>
+        </div>
+    </section>
+
+
+
+
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="function.js"></script>
+    
+
+</body>
+</html>
+   

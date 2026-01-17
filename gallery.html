@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2d5016;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        
+        .folders-section, .images-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #3a7d34;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        
+        .folders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .folder {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .folder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(58, 125, 52, 0.15);
+            border-color: #4caf50;
+        }
+        
+        .folder.active {
+            border-color: #4caf50;
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .folder-thumbnail {
+            height: 140px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .folder-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .folder:hover .folder-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .folder-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .folder:hover .folder-overlay {
+            opacity: 1;
+        }
+        
+        .folder-icon-inside {
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(76, 175, 80, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .folder-info {
+            padding: 15px;
+        }
+        
+        .folder-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2d5016;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .folder-count {
+            color: #6b8c5e;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .folder-count i {
+            margin-right: 6px;
+            font-size: 0.8rem;
+        }
+        
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        .image-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(45, 80, 22, 0.1);
+            height: 200px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .image-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(58, 125, 52, 0.15);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(45, 80, 22, 0.7), transparent);
+            color: white;
+            padding: 15px 10px 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-item:hover .image-info {
+            transform: translateY(0);
+        }
+        
+        .image-name {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .no-images {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            color: #6b8c5e;
+            font-size: 1.1rem;
+        }
+        
+        .back-to-folders {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .back-to-folders:hover {
+            background-color: #3d8b40;
+        }
+        
+        .back-to-folders i {
+            margin-right: 8px;
+        }
+        
+        .images-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .selected-folder-title {
+            color: #2d5016;
+            font-size: 1.5rem;
+        }
+        
+        .selected-folder-title i {
+            color: #4caf50;
+            margin-right: 10px;
+        }
+        
+        /* Image Viewer Modal Styles */
+        .image-viewer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .image-viewer-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image-viewer-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .image-viewer-info {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .image-viewer-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .image-viewer-nav:hover {
+            background-color: rgba(76, 175, 80, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-prev {
+            left: -70px;
+        }
+        
+        .nav-next {
+            right: -70px;
+        }
+        
+        .image-viewer-close {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .image-viewer-close:hover {
+            background-color: rgba(76, 175, 80, 1);
+            transform: scale(1.1);
+        }
+        
+        .image-counter {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            color: white;
+            font-size: 1.1rem;
+            background-color: rgba(76, 175, 80, 0.8);
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .folders-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .images-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .image-item {
+                height: 180px;
+            }
+            
+            .folder-thumbnail {
+                height: 120px;
+            }
+            
+            .image-viewer-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .nav-prev {
+                left: -40px;
+            }
+            
+            .nav-next {
+                right: -40px;
+            }
+            
+            .image-viewer-close {
+                top: -40px;
+                right: 0;
+            }
+            
+            .image-counter {
+                top: -40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .folders-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+            
+            .images-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            
+            .folder-name {
+                font-size: 1rem;
+            }
+            
+            .folder-info {
+                padding: 12px;
+            }
+            
+            .nav-prev {
+                left: 10px;
+            }
+            
+            .nav-next {
+                right: 10px;
+            }
+            
+            .image-viewer-close {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .image-counter {
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+       
+    
+      <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.webp" alt="" id="logoImage1">
+                <img src="/logo2.webp" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.webp">
+        </div>
+
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य साकार।</p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+
+
+            <li class="menu-item active">
+                <a href="gallery.html">Gallery</a>
+            </li>
+            
+              <li class="menu-item">
+                <a href="commettee.html">Board Members</a>
+            </li>
+              <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+    <div class="gallery-container">
+        <h1 class="page-title">Image Gallery</h1>
+        
+        <!-- Folders Section -->
+        <div class="folders-section" id="folders-section">
+            <h2 class="section-title">Select a Folder</h2>
+            <div class="folders-grid" id="folders-container">
+                <!-- Folders will be dynamically added here -->
+            </div>
+        </div>
+        
+        <!-- Images Section (initially hidden) -->
+        <div class="images-section" id="images-section" style="display: none;">
+            <div class="images-header">
+                <button class="back-to-folders" id="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Folders
+                </button>
+                <h2 class="selected-folder-title" id="selected-folder-title">
+                    <i class="fas fa-folder-open"></i> <span id="folder-title">Folder Name</span>
+                </h2>
+            </div>
+            
+            <div class="images-grid" id="images-container">
+                <!-- Images will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Viewer Modal -->
+    <div class="image-viewer-modal" id="image-viewer-modal">
+        <div class="image-viewer-content">
+            <button class="image-viewer-close" id="image-viewer-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="image-counter" id="image-counter">1 / 15</div>
+            <img class="image-viewer-img" id="image-viewer-img" src="" alt="">
+            <div class="image-viewer-info" id="image-viewer-info">Image Name</div>
+            <button class="image-viewer-nav nav-prev" id="nav-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="image-viewer-nav nav-next" id="nav-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data - in a real app, this would come from a server/database
+        const galleryData = {
+            "General Election": {
+                name: "General Election (paush 9)",
+                imageCount: 15,
+                images: [
+                    {id: 1, name: "General Election", url: "Election Images/1.webp"},
+                    {id: 2, name: "General Election", url: "Election Images/2.webp"},
+                    {id: 3, name: "General Election", url: "Election Images/3.webp"},
+                    {id: 4, name: "General Election", url: "Election Images/4.webp"},
+                    {id: 5, name: "General Election", url: "Election Images/5.webp"},
+                    {id: 6, name: "General Election", url: "Election Images/6.webp"},
+                    {id: 7, name: "General Election", url: "Election Images/7.webp"},
+                    {id: 8, name: "General Election", url: "Election Images/8.webp"},
+                    {id: 9, name: "General Election", url: "Election Images/9.webp"},
+                    {id: 10, name: "General Election", url: "Election Images/10.webp"},
+                    {id: 11, name: "General Election", url: "Election Images/11.webp"},
+                    {id: 12, name: "General Election", url: "Election Images/12.webp"},
+                    {id: 13, name: "General Election", url: "Election Images/13.webp"},
+                    {id: 14, name: "General Election", url: "Election Images/14.webp"},
+                    {id: 15, name: "General Election", url: "Election Images/15.webp"},
+                ]
+            },
+            "Office Images": {
+                name: "Office Images",
+                imageCount: 5,
+                images: [
+                    {id: 1, name: "Birthday Party", url: "Office-images/1.webp"},
+                    {id: 2, name: "Family Dinner", url: "Office-images/2.webp"},
+                    {id: 3, name: "Weekend Outing", url: "Office-images/3.webp"},
+                    {id: 4, name: "Holiday Gathering", url: "Office-images/4.webp"},
+                    {id: 5, name: "Kids Playtime", url: "Office-images/5.webp"},
+                    
+                ]
+            }
+        };
+
+        // DOM elements
+        const foldersSection = document.getElementById('folders-section');
+        const imagesSection = document.getElementById('images-section');
+        const foldersContainer = document.getElementById('folders-container');
+        const imagesContainer = document.getElementById('images-container');
+        const backButton = document.getElementById('back-button');
+        const folderTitle = document.getElementById('folder-title');
+        
+        // Image viewer elements
+        const imageViewerModal = document.getElementById('image-viewer-modal');
+        const imageViewerImg = document.getElementById('image-viewer-img');
+        const imageViewerInfo = document.getElementById('image-viewer-info');
+        const imageViewerClose = document.getElementById('image-viewer-close');
+        const navPrev = document.getElementById('nav-prev');
+        const navNext = document.getElementById('nav-next');
+        const imageCounter = document.getElementById('image-counter');
+
+        // Global variables for image viewer
+        let currentFolder = null;
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        // Initialize the gallery
+        function initGallery() {
+            renderFolders();
+            attachEventListeners();
+        }
+
+        // Render all folders with first image as thumbnail
+        function renderFolders() {
+            foldersContainer.innerHTML = '';
+            
+            Object.keys(galleryData).forEach(folderId => {
+                const folder = galleryData[folderId];
+                
+                // Get the first image URL for the folder thumbnail
+                const thumbnailUrl = folder.images.length > 0 
+                    ? folder.images[0].url 
+                    : 'Election Images/1.webp'; // Default placeholder
+                
+                const folderElement = document.createElement('div');
+                folderElement.className = 'folder';
+                folderElement.dataset.folderId = folderId;
+                
+                folderElement.innerHTML = `
+                    <div class="folder-thumbnail">
+                        <img src="${thumbnailUrl}" alt="${folder.name}">
+                        <div class="folder-overlay">
+                            <div class="folder-icon-inside">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder-info">
+                        <div class="folder-name">${folder.name}</div>
+                        <div class="folder-count">
+                            <i class="fas fa-images"></i> ${folder.imageCount} image${folder.imageCount !== 1 ? 's' : ''}
+                        </div>
+                    </div>
+                `;
+                
+                foldersContainer.appendChild(folderElement);
+            });
+        }
+
+        // Render images for a specific folder
+        function renderImages(folderId) {
+            const folder = galleryData[folderId];
+            currentFolder = folderId;
+            currentImages = folder.images;
+            
+            // Update the folder title
+            folderTitle.textContent = folder.name;
+            
+            // Clear the images container
+            imagesContainer.innerHTML = '';
+            
+            // Check if folder has images
+            if (folder.images.length === 0) {
+                const noImagesElement = document.createElement('div');
+                noImagesElement.className = 'no-images';
+                noImagesElement.innerHTML = `
+                    <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 15px; display: block;"></i>
+                    This folder is empty
+                `;
+                imagesContainer.appendChild(noImagesElement);
+                return;
+            }
+            
+            // Add all images
+            folder.images.forEach((image, index) => {
+                const imageElement = document.createElement('div');
+                imageElement.className = 'image-item';
+                imageElement.dataset.imageIndex = index;
+                
+                imageElement.innerHTML = `
+                    <img src="${image.url}" alt="${image.name}" loading="lazy">
+                    <div class="image-info">
+                        <div class="image-name">${image.name}</div>
+                    </div>
+                `;
+                
+                imagesContainer.appendChild(imageElement);
+            });
+        }
+
+        // Show image in viewer modal
+        function showImageInViewer(imageIndex) {
+            if (!currentImages || currentImages.length === 0) return;
+            
+            currentImageIndex = imageIndex;
+            const image = currentImages[currentImageIndex];
+            
+            // Update modal content
+            imageViewerImg.src = image.url;
+            imageViewerImg.alt = image.name;
+            imageViewerInfo.textContent = image.name;
+            imageCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+            
+            // Show modal
+            imageViewerModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Update navigation buttons state
+            navPrev.style.display = currentImageIndex > 0 ? 'flex' : 'none';
+            navNext.style.display = currentImageIndex < currentImages.length - 1 ? 'flex' : 'none';
+        }
+
+        // Navigate to previous image
+        function showPrevImage() {
+            if (currentImageIndex > 0) {
+                showImageInViewer(currentImageIndex - 1);
+            }
+        }
+
+        // Navigate to next image
+        function showNextImage() {
+            if (currentImageIndex < currentImages.length - 1) {
+                showImageInViewer(currentImageIndex + 1);
+            }
+        }
+
+        // Close image viewer
+        function closeImageViewer() {
+            imageViewerModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Show the images section for a specific folder
+        function showFolderImages(folderId) {
+            // Update active folder in the folders view
+            document.querySelectorAll('.folder').forEach(folder => {
+                folder.classList.remove('active');
+                if (folder.dataset.folderId === folderId) {
+                    folder.classList.add('active');
+                }
+            });
+            
+            // Render the images
+            renderImages(folderId);
+            
+            // Switch to images view
+            foldersSection.style.display = 'none';
+            imagesSection.style.display = 'block';
+            
+            // Scroll to top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show the folders section
+        function showFolders() {
+            imagesSection.style.display = 'none';
+            foldersSection.style.display = 'block';
+            
+            // Scroll to top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Attach event listeners
+        function attachEventListeners() {
+            // Folder click events
+            document.querySelectorAll('.folder').forEach(folder => {
+                folder.addEventListener('click', function() {
+                    const folderId = this.dataset.folderId;
+                    showFolderImages(folderId);
+                });
+            });
+            
+            // Back button event
+            backButton.addEventListener('click', showFolders);
+            
+            // Image click events
+            imagesContainer.addEventListener('click', function(e) {
+                const imageItem = e.target.closest('.image-item');
+                if (imageItem) {
+                    const imageIndex = parseInt(imageItem.dataset.imageIndex);
+                    showImageInViewer(imageIndex);
+                }
+            });
+            
+            // Image viewer events
+            imageViewerClose.addEventListener('click', closeImageViewer);
+            navPrev.addEventListener('click', showPrevImage);
+            navNext.addEventListener('click', showNextImage);
+            
+            // Close modal when clicking outside the image
+            imageViewerModal.addEventListener('click', function(e) {
+                if (e.target === imageViewerModal) {
+                    closeImageViewer();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (imageViewerModal.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        closeImageViewer();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    } else if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    }
+                }
+            });
+        }
+
+        // Initialize the gallery when the page loads
+        document.addEventListener('DOMContentLoaded', initGallery);
+    </script>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved. | Registered under Nepal Cooperative Act</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="function.js"></script>
+</body>
+</html>
