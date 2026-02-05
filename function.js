@@ -1,4 +1,4 @@
- 
+  
         let currentImage = 1;
         let isAnimating = false;
         

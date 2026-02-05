@@ -1,4 +1,4 @@
-// Wait for DOM to be fully loaded
+ // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     // -------- POPUP FUNCTIONALITY --------
     const firstPopup = document.getElementById("imagePopup");
@@ -210,4 +210,4 @@ document.addEventListener("DOMContentLoaded", function() {
             this.style.transform = 'scale(1)';
         });
     });
-});
+})
